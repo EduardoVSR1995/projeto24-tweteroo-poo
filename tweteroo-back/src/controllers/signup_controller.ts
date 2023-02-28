@@ -1,11 +1,19 @@
+import { Request, Response } from "express";
+
+type Usuario = {
+  username: string,
+  avatar: string
+}
+
 export default new class sigs{
+    usuarios: Usuario[];
     constructor (){
       this.usuarios = [];
       this.signin = this.signin.bind(this);
       this.getUser = this.getUser.bind(this);
     }
     
-    signin(req, res){
+    signin(req: Request, res: Response){
       const { username, avatar } = req.body;
     
       if (!username || !avatar) {
@@ -17,7 +25,7 @@ export default new class sigs{
     
       res.status(200).send('OK deu tudo certo');
     }
-    getUser(username){
+    getUser(username: string){
       return this.usuarios.find( user => user.username === username);
     };
   };

@@ -5,7 +5,6 @@ import signinRouter from './routers/signup.js';
 import tweetsRouter from './routers/tweets.js';
 
 const app = express();
-
 app
   .use(cors())
   .use(json())
@@ -13,5 +12,5 @@ app
   .use(tweetsRouter);
 
 app.listen(4000, () => {
-  console.log(chalk.bold.blue('Servidor funfando de boas!!!'));
+  console.log(chalk.bold.blue('Servidor funfando de boas!!!....'));
 });
